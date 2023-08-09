@@ -1,6 +1,6 @@
 function getComputerChoice() {
   choices = ["rock", "paper", "scissors"] 
-  return choices[Math.floor(Math.random() * choices.length)]
+  return choices[Math.floor(Math.random() * 3)]
 }
 
 function playRound(ps, cs) {
@@ -35,6 +35,16 @@ function playRound(ps, cs) {
     }
   }
 }
+let i = 0
 
-const playerSelection = prompt("Choose").toLowerCase();
-const computerSelection = getComputerChoice();
+function game() {
+  for (let _ = 0; _ < 5; _++) {
+
+    const playerSelection = prompt("Choose").toLowerCase();
+    const computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection))
+    
+  }
+}
+
+game()
