@@ -3,48 +3,34 @@ function getComputerChoice() {
   return choices[Math.floor(Math.random() * 3)]
 }
 
-function playRound(ps, cs) {
-  // ps -> player selection
-  // cs -> computer selection
+function playRound(playerSelection) {
+  compSelection = getComputerChoice()
 
-  if (ps === cs) {
+  if (playerSelection === compSelection) {
     return "You Tied!"
 
   } else {
 
-    if (ps === "rock" && cs === "scissors") {
+    if (playerSelection === "rock" && compSelection === "scissors") {
       return "You Won! Rock beats Scissors"
     }
-    else if (ps === "scissors" && cs === "paper"){
+    else if (playerSelection === "scissors" && compSelection === "paper"){
       return "You Won! Scissors beats Paper"
 
-    } else if (ps === "paper" && cs === "rock") {
+    } else if (playerSelection === "paper" && compSelection === "rock") {
       return "You Won! Paper beats Rock"
     }
     else {
 
-      if (cs === "rock" && ps === "scissors") {
+      if (compSelection === "rock" && playerSelection === "scissors") {
         return "You Lost! Rock beats Scissors"
       } 
-      else if (cs === "paper" && ps === "rock") {
+      else if (compSelection === "paper" && playerSelection === "rock") {
         return "You Lost! Paper beats Rock"
       }
-      else if (cs === "scissors" && ps === "paper") {
+      else if (compSelection === "scissors" && playerSelection === "paper") {
         return "You Lost! Scissors beats Paper"
       }
     }
   }
 }
-let i = 0
-
-function game() {
-  for (let _ = 0; _ < 5; _++) {
-
-    const playerSelection = prompt("Choose").toLowerCase();
-    const computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection, computerSelection))
-    
-  }
-}
-
-game()

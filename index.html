@@ -5,8 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock Paper Scissors</title>
   <link rel="stylesheet" href="style.css">
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
 </head>
-<body> 
+<body>
+
+  <header class="heading">
+    <h1>Rock Paper Scissors</h1>
+  </header>
+
+  <div class="content">
+    <div class="score">
+      <div class="player">
+        Player
+        <div class="player-score">
+          0 <!--Sample text-->
+        </div>
+      </div>
+      
+      <div class="comp">
+        Computer
+        <div class="comp-score">
+          0 <!--Sample text-->
+        </div>
+      </div>
+    </div>
+    
+    <div class="win-message">
+      Computer won rock beats paper <!--Sample text-->
+    </div>
+
+    <div class="choices">
+      <div class="rock">
+        <img src="img/rock.png" alt="rock">
+      </div>
+      
+      <div class="paper">
+        <img src="img/paper.png" alt="paper">
+      </div>
+
+      <div class="scissors">
+        <img src="img/scissors.png" alt="scissors">
+      </div>
+    </div>
+
+    <div class="messages">
+      <div class="player-message">
+        You choose rock <!--Sample text-->
+      </div>
+      <div class="comp-message">
+        Computer choose paper <!--Sample text-->
+      </div>
+    </div>
+
+    <button class="reset">Reset</button>
+    <button class="play-again">Play again</button>
+  </div>
+
 </body>
 </html>
