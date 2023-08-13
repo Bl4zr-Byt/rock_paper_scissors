@@ -46,3 +46,32 @@ body {
   font-size: 24px;
   color: #000
 }
+
+
+.choices {
+  display: flex;
+  padding: 32px 0px;
+  justify-content: center;
+  gap: 16px 
+}
+
+.choice {
+  border: 1px solid black;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: #8CC0DE;
+  display: flex;
+  justify-content: center;
+}
+
+.choice:hover {
+  background-color: #7293a7;
+}
+
+.choice img {
+  display: block;
+  height: 200px;
+  width: auto;
+  margin: auto;
+} 
