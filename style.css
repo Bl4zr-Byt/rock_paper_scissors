@@ -8,20 +8,25 @@ body {
   background-color: #FAF0D7;
 }
 
+/* flex  */
+.score, .choices, .choice, .messages, .message, .buttons{
+  display: flex;
+}
+
 .heading {
   background-color: #FFD9C0;
+  font-size: 24px;
   padding: 16px;
   text-align: center;
 }
 
-.content {
-  flex-grow: 1;
+.heading .sub {
+  font-weight: lighter;
 }
 
 .score {
   padding: 16px 0px;
   text-align: center;
-  display: flex;
   justify-content: center;
 }
 
@@ -32,6 +37,7 @@ body {
   padding: 8px;
   border: 1px solid #FAF0D7;
   background-color: #8CC0DE;
+  border-radius: 15px;
 }
 
 .player-score, .comp-score {
@@ -39,19 +45,12 @@ body {
   margin-top: 4px;
 }
 
-.win-message {
-  text-align: center;
-  font-size: 24px;
-  color: #000
-}
-
 
 .choices {
-  display: flex;
-  padding: 32px 0px;
   justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
+  margin: 32px 0px;
 }
 
 .choice {
@@ -60,7 +59,6 @@ body {
   height: 250px;
   border-radius: 50%;
   background-color: #8CC0DE;
-  display: flex;
   justify-content: center;
 }
 
@@ -75,28 +73,40 @@ body {
   margin: auto;
 } 
 
-.messages {
-  padding: 48px 0px;
-  font-size: 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.win-message {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  font-style: oblique;
+  margin-bottom: 16px;
 }
 
-.message{
-  width: 320px;
+.messages {
+  display: flex;
+  justify-content: center;
+  gap: 4px
+}
+
+.player-msg, .comp-msg {
+  background-color: #FFD9C0;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  width: 128px ;
+  padding: 16px;
+  border: 1px solid red;
+  border-radius: 10px;
 }
 
 .player-choice, .comp-choice {
-  color: #e60000;
-  font-weight: bolder;
+  font-weight: lighter;
+  color: #f54242;
 }
 
-
 .buttons  {
-  display: flex;
   justify-content: center;
-  gap: 8px
+  gap: 8px;
+  margin-top: 48px;
 }
 
 .reset, .play-again {
