@@ -1,0 +1,9 @@
+body, h1 {
+  margin: 0px;
+}
+
+.heading {
+  background-color: #c76000;
+  padding: 16px;
+  text-align: center;
+}
