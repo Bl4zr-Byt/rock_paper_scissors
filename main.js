@@ -3,31 +3,32 @@ function getComputerChoice() {
   return choices[Math.floor(Math.random() * 3)]
 }
 
-function playRound(playerSelection, compSelection) {
-  if (playerSelection === compSelection) {
-    return "You Tied!"
+
+function playRound(playerChoice, compChoice) {
+  if (playerChoice === compChoice) {
+    return undefined;
 
   } else {
 
-    if (playerSelection === "rock" && compSelection === "scissors") {
-      return "You Won! Rock beats Scissors"
+    if (playerChoice === "rock" && compChoice === "scissors") {
+      return true;
     }
-    else if (playerSelection === "scissors" && compSelection === "paper"){
-      return "You Won! Scissors beats Paper"
+    else if (playerChoice === "scissors" && compChoice === "paper"){
+      return true;
 
-    } else if (playerSelection === "paper" && compSelection === "rock") {
-      return "You Won! Paper beats Rock"
+    } else if (playerChoice === "paper" && compChoice === "rock") {
+      return true;
     }
     else {
 
-      if (compSelection === "rock" && playerSelection === "scissors") {
-        return "You Lost! Rock beats Scissors"
+      if (compChoice === "rock" && playerChoice === "scissors") {
+        return false;
       } 
-      else if (compSelection === "paper" && playerSelection === "rock") {
-        return "You Lost! Paper beats Rock"
+      else if (compChoice === "paper" && playerChoice === "rock") {
+        return false;
       }
-      else if (compSelection === "scissors" && playerSelection === "paper") {
-        return "You Lost! Scissors beats Paper"
+      else if (compChoice === "scissors" && playerChoice === "paper") {
+        return false;
       }
     }
   }
