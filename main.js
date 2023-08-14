@@ -33,7 +33,12 @@ function playRound(playerChoice, compChoice) {
     }
   }
 }
+
 function gameBtnFunctionality(pChoice) {
+  if (score["player"] >= 5 || score["comp"] >= 5) {
+    return;
+  }
+
   let compChoice = getComputerChoice()
   let outcome = playRound(pChoice, compChoice)
 
@@ -42,38 +47,32 @@ function gameBtnFunctionality(pChoice) {
 
   if (outcome === true) {
     gameMsg.textContent = `You Won! ${pChoice} beats ${compChoice}`
-    scores[0] += 1
-    playerScore.textContent = scores[0]
-    console.log("win")
+    score["player"] += 1
+    playerScore.textContent = score["player"]
   }
   else if (outcome === false) {
     gameMsg.textContent = `You Lost! ${compChoice} beats ${pChoice}`
-    scores[1] += 1
-    compScore.textContent = scores[1]
-    console.log("lose")
+    score["comp"] += 1
+    compScore.textContent = score["comp"]
   }
   else {
     gameMsg.textContent = "You Tied!"
-    console.log("tie")
   }
 }
 
-
 // variables
-let scores = [0, 0]
-
+let score = { "player": 0, "comp": 0 };
 
 // elements
 const gameMsg = document.querySelector(".game-message")
+
 const playerScore = document.querySelector(".player-score")
 const compScore = document.querySelector(".comp-score")
+
 const playerChoiceDOM = document.querySelector(".player-choice")
 const compChoiceDOM = document.querySelector(".comp-choice")
-const rockBtn = document.querySelector("#rock")
-const paperBtn = document.querySelector("#paper")
-const scissorsBtn = document.querySelector("#scissors")
 
-// events
-rockBtn.addEventListener("click", () => gameBtnFunctionality("rock"))
-paperBtn.addEventListener("click", () => gameBtnFunctionality("paper"))
-scissorsBtn.addEventListener("click", () => gameBtnFunctionality("scissors"))
+const choicesBtn = document.querySelectorAll(".choice")
+choicesBtn.forEach((choice) => {
+  choice.addEventListener("click", () => gameBtnFunctionality(choice.id))
+})
