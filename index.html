@@ -10,7 +10,7 @@
 <body>
 
   <header class="heading">
-    <h1>Rock Paper Scissors - <span class="sub">First to 5 wins!</span></h1>
+    <h1 id="head">Rock Paper Scissors - <span class="sub">First to 5 wins!</span></h1>
   </header>
 
   <div class="content">
@@ -29,8 +29,8 @@
         </div>
       </div>
     </div>
-
-
+    
+    
     <div class="choices">
       <div class="choice" id="rock">
         <img src="img/rock.png" alt="rock">
@@ -39,10 +39,11 @@
       <div class="choice" id="paper">
         <img src="img/paper.png" alt="paper">
       </div>
-
+      
       <div class="choice" id="scissors">
         <img src="img/scissors.png" alt="scissors">
       </div>
+      <div class="win-overlay"></div>
     </div>
 
     <div class="game-message">
@@ -61,10 +62,11 @@
     </div>
 
     <div class="buttons">
-      <button class="reset">Reset</button>
-      <button class="play-again">Play again</button>
+      <button id="reset">Reset</button>
+      <button id="play-again">Play again</button>
     </div>
   </div>
+
 
 </body>
 </html>

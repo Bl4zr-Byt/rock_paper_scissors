@@ -99,8 +99,8 @@ body {
 }
 
 .player-choice, .comp-choice {
-  font-weight: lighter;
-  color: #f54242;
+  font-weight: bold;
+  color: #f32b2b;
 }
 
 .buttons  {
@@ -109,7 +109,7 @@ body {
   margin-top: 48px;
 }
 
-.reset, .play-again {
+#reset, #play-again {
   height: 50px;
   width: 160px;
   border: 2px solid #8CC0DE;
@@ -119,4 +119,16 @@ body {
 
 button:hover {
   background-color: #ACE1AF;
+}
+
+.win-overlay {
+  font-weight: bolder;
+  font-size: 80px;
+  padding: 64px 0px;
+  border: 10px solid #FAF0D7;
+  border-radius: 30px;
+  position: absolute;
+  bottom: 40%;
+  color: #df0068;
+  background-color: #FAF0D7;
 }
