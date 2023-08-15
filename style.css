@@ -117,18 +117,17 @@ body {
   background-color: #CCEEBC;
 }
 
-button:hover {
-  background-color: #ACE1AF;
+#reset:hover, #play-again:hover {
+  background-color: #99d67d;
+  border: 2px solid #5d849b;
 }
 
 .win-overlay {
   font-weight: bolder;
   font-size: 80px;
-  padding: 64px 0px;
-  border: 10px solid #FAF0D7;
-  border-radius: 30px;
+  padding: 32px 0px;
   position: absolute;
-  bottom: 40%;
+  bottom: 45%;
   color: #df0068;
   background-color: #FAF0D7;
 }
