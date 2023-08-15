@@ -30,17 +30,7 @@ function playRound(playerChoice, compChoice) {
 }
 
 function gameBtnFunctionality(pChoice) {
-  if (score["player"] >= 5 || score["computer"] >= 5) {
-    
-    let winner = Object.keys(score).find(key => {
-      return score[key] === Math.max(score["player"], score["computer"]);
-    }).toUpperCase()
-    
-    winMsg.textContent = `${winner} WON THE GAME, GG!!`
-    playAgainBtn.style.display = "inline";
-    winMsg.style.display = "block";
-    return; 
-  }
+  if (winnerIsDecided) return;
   
   resetBtn.style.display = "inline";
   let compChoice = getComputerChoice()
@@ -62,9 +52,22 @@ function gameBtnFunctionality(pChoice) {
   else {
     gameMsg.textContent = "You Tied!"
   }
+
+  if (score["player"] >= 5 || score["computer"] >= 5) {
+    winnerIsDecided = true;
+    let winner = Object.keys(score).find(key => {
+      return score[key] === Math.max(score["player"], score["computer"]);
+    }).toUpperCase()
+    
+    winMsg.textContent = `${winner} WON THE GAME, GG!!`
+    playAgainBtn.style.display = "inline";
+    winMsg.style.display = "block";
+    return; 
+  }
 }
 
 function resetGame() {
+  winnerIsDecided = false;
   score["player"] = 0, score["computer"] = 0
   playerScore.textContent = 0
   compScore.textContent = 0
@@ -78,6 +81,7 @@ function resetGame() {
 
 // variables
 let score = { "player": 0, "computer": 0 };
+let winnerIsDecided = false;
 
 // elements
 const gameMsg = document.querySelector(".game-message")
