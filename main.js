@@ -8,25 +8,17 @@ function playRound(playerChoice, compChoice) {
   if (playerChoice === compChoice) {
     return undefined;
   }
-  if (playerChoice === "rock" && compChoice === "scissors") {
-    return true;
-  }
-  else if (playerChoice === "scissors" && compChoice === "paper") {
-    return true;
+  if (
+    playerChoice === "rock" && compChoice === "scissors" ||
+    playerChoice === "scissors" && compChoice === "paper" ||
+    playerChoice === "paper" && compChoice === "rock"
+  ) return true;
 
-  } else if (playerChoice === "paper" && compChoice === "rock") {
-    return true;
-  }
-
-  if (compChoice === "rock" && playerChoice === "scissors") {
-    return false;
-  }
-  else if (compChoice === "paper" && playerChoice === "rock") {
-    return false;
-  }
-  else if (compChoice === "scissors" && playerChoice === "paper") {
-    return false;
-  }
+  if (
+    compChoice === "rock" && playerChoice === "scissors" ||
+    compChoice === "paper" && playerChoice === "rock" ||
+    compChoice === "scissors" && playerChoice === "paper"
+    ) return false;
 }
 
 function gameBtnFunctionality(pChoice) {
