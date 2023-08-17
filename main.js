@@ -24,7 +24,6 @@ function playRound(playerChoice, compChoice) {
 function gameBtnFunctionality(pChoice) {
   if (winnerIsDecided) return;
   
-  resetBtn.style.display = "inline";
   let compChoice = getComputerChoice()
   let outcome = playRound(pChoice, compChoice)
 
@@ -68,7 +67,6 @@ function resetGame() {
   compChoiceDOM.textContent = "empty"
   winMsg.style.display = "none";
   playAgainBtn.style.display = "none";
-  resetBtn.style.display = "none";
 }
 
 // variables
@@ -86,13 +84,11 @@ const compScore = document.querySelector(".comp-score")
 const playerChoiceDOM = document.querySelector(".player-choice")
 const compChoiceDOM = document.querySelector(".comp-choice")
 
-const resetBtn = document.querySelector("#reset")
 const playAgainBtn = document.querySelector("#play-again")
 
 const choicesBtn = document.querySelectorAll(".choice")
 
 // Styles
-resetBtn.style.display = "none"; 
 playAgainBtn.style.display = "none";
 winMsg.style.display = "none";
 
@@ -100,5 +96,4 @@ winMsg.style.display = "none";
 choicesBtn.forEach((choice) => {
   choice.addEventListener("click", () => gameBtnFunctionality(choice.id))
 })
-resetBtn.addEventListener("click", resetGame)
 playAgainBtn.addEventListener("click", resetGame)
